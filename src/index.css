@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--heading-font: 'Montserrat', sans-serif;
+	--body-font: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--heading-font);
+}
+
+body {
+	font-family: var(--body-font);
+}
+
+h1 {
+	font-weight: 900;
+	font-size: 2.5rem;
+}
+
+.subtitle {
+	font-family: var(--heading-font);
+	font-weight: 500;
+}
+
+body {
+	overflow-x: hidden;
+	font-family: 'Montserrat', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
