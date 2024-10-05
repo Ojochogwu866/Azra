@@ -59,7 +59,7 @@ function Join() {
 			<div className="mx-auto flex h-full w-full max-w-7xl items-center justify-start px-4 sm:px-6 lg:px-8">
 				<div className="flex h-full flex-col justify-center space-y-8">
 					<div>
-						<h2 className="text-5xl font-bold uppercase leading-[60px] text-gray-100">
+						<h2 className="text-3xl font-bold uppercase leading-[60px] text-gray-100 md:text-5xl">
 							Find where you
 							<br /> belong in church
 						</h2>

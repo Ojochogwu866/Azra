@@ -1,4 +1,4 @@
-import { PayPalButtons } from '@paypal/react-paypal-js';
+import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { closePaymentModal, useFlutterwave } from 'flutterwave-react-v3';
 import { useState } from 'react';
 import { PaystackButton } from 'react-paystack';
@@ -117,39 +117,50 @@ function PaymentForm({ selectedPaymentOption, onClose }: PaymentFormProps) {
 			{selectedPaymentOption === 'Paystack' && (
 				<PaystackButton
 					{...paystackConfig}
-					className="h-16 w-full bg-green-500 py-2 text-white"
+					className="w-full bg-green-500 px-6 py-3 text-white"
 				/>
 			)}
 
 			{selectedPaymentOption === 'Flutterwave' && (
-				<button type="submit" className="h-16 w-full bg-orange-500 text-white">
+				<button
+					type="submit"
+					className="w-full bg-orange-500 px-6 py-3 text-white"
+				>
 					Pay with Flutterwave
 				</button>
 			)}
 
 			{selectedPaymentOption === 'PayPal' && (
-				<PayPalButtons
-					createOrder={(_, actions) => {
-						return actions.order?.create({
-							intent: 'CAPTURE',
-							purchase_units: [
-								{
-									amount: {
-										currency_code: 'USD',
-										value: amount,
+				<PayPalScriptProvider
+					options={{
+						clientId: 'your-client-id',
+						currency: 'USD',
+					}}
+				>
+					<PayPalButtons
+						createOrder={(_, actions) => {
+							return actions.order?.create({
+								intent: 'CAPTURE',
+								purchase_units: [
+									{
+										amount: {
+											currency_code: 'USD',
+											value: amount,
+										},
 									},
-								},
-							],
-						});
-					}}
-					onApprove={(_, actions) => {
-						return actions.order?.capture().then(function (details) {
-							const payerName = details?.payer?.name?.given_name ?? 'customer';
-							console.log('Transaction completed by ' + payerName);
-							onClose();
-						});
-					}}
-				/>
+								],
+							});
+						}}
+						onApprove={(_, actions) => {
+							return actions.order?.capture().then(function (details) {
+								const payerName =
+									details?.payer?.name?.given_name ?? 'customer';
+								console.log('Transaction completed by ' + payerName);
+								onClose();
+							});
+						}}
+					/>
+				</PayPalScriptProvider>
 			)}
 		</form>
 	);

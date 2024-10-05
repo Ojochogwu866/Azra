@@ -22,18 +22,18 @@ function Hero() {
 
 	return (
 		<div
-			className="relative h-screen w-screen bg-cover bg-center"
+			className="relative min-h-screen w-full bg-cover bg-center"
 			style={{ backgroundImage: `url(${bgImageUrl})` }}
 		>
 			<div className="absolute inset-0 bg-black opacity-65"></div>
-			<div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center justify-start sm:px-6 lg:px-8">
-				<div className="mt-24 flex flex-col space-y-10 text-left">
+			<div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center justify-start p-6 sm:px-6 lg:px-8">
+				<div className="mt-40 flex flex-col space-y-6 text-left md:space-y-10">
 					<p className="font-base text-gray-100">We want to see you here!</p>
-					<h1 className="text-left text-6xl font-black uppercase text-white">
+					<h1 className="text-left text-4xl font-black uppercase text-white md:text-6xl">
 						The Light Fellowship <br /> Salt & Light
 					</h1>
 					<Button
-						className="w-[200px]"
+						className="w-full sm:w-[200px]"
 						variant="secondary"
 						colors={{
 							secondary: {

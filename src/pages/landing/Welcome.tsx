@@ -97,7 +97,7 @@ const CircularImagePie: React.FC = () => {
 	return (
 		<div
 			ref={containerRef}
-			className="relative flex h-[500px] w-[500px] gap-4 overflow-hidden rounded-full"
+			className="relative flex h-[300px] w-[300px] gap-4 overflow-hidden rounded-full md:h-[500px] md:w-[500px]"
 		>
 			{images.map((image, index) => (
 				<ImageSlice
@@ -116,9 +116,9 @@ const CircularImagePie: React.FC = () => {
 function Welcome() {
 	return (
 		<div className="w-full bg-gray-100">
-			<div className="mx-auto flex h-screen w-full max-w-7xl items-center justify-center gap-16 p-8">
-				<div>
-					<h2 className="text-5xl font-bold uppercase leading-[60px]">
+			<div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-center gap-8 p-6 md:flex-row md:gap-16 md:p-8">
+				<div className="text-center md:text-left">
+					<h2 className="text-4xl font-bold uppercase leading-tight md:text-5xl md:leading-[60px]">
 						We can't
 						<br /> wait to see <br /> you!
 					</h2>
@@ -127,7 +127,9 @@ function Welcome() {
 						Experience the presence of the Lord
 					</p>
 				</div>
-				<CircularImagePie />
+				<div className="flex w-full items-center justify-center md:w-auto">
+					<CircularImagePie />
+				</div>
 			</div>
 		</div>
 	);

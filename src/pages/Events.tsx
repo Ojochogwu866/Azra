@@ -79,14 +79,14 @@ function Events() {
 		<div>
 			<Header />
 
-			<div className="relative h-screen w-full">
+			<div className="relative mt-10 h-screen w-full">
 				<img
 					src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29yc2hpcHxlbnwwfHwwfHx8MA%3D%3D"
 					alt="Events Hero"
 					className="absolute inset-0 h-full w-full object-cover"
 				/>
 				<div className="absolute inset-0 bg-black bg-opacity-50" />
-				<div className="absolute inset-0 flex flex-col items-start justify-center text-white">
+				<div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center justify-start sm:px-6 lg:px-8">
 					<div className="w-full max-w-4xl px-4">
 						<h1 className="mb-4 text-start text-6xl font-black uppercase text-white">
 							Upcoming Events
@@ -140,7 +140,10 @@ function Events() {
 							</Button>
 						</div>
 					</div>
-					<div ref={containerRef} className="scrollbar-hide overflow-x-auto">
+					<div
+						ref={containerRef}
+						className="scrollbar-hide h-[300px] overflow-x-auto overflow-y-hidden"
+					>
 						<div ref={scrollRef} className="flex">
 							{events.map((event) => (
 								<div key={event.id} className="mr-8 w-80 flex-shrink-0">
