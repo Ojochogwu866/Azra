@@ -3,11 +3,15 @@ import { useState } from 'react';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/tabs';
+import { Modal } from '../components/Modal';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/Tabs';
+import PaymentForm from './PaymentForm';
 
 function Giving() {
 	const [givingType, setGivingType] = useState('tithe');
 	const [paymentMethod, setPaymentMethod] = useState('bank');
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [selectedPaymentOption, setSelectedPaymentOption] = useState('');
 
 	const bankDetails = {
 		bankName: 'Example Bank',
@@ -16,7 +20,15 @@ function Giving() {
 		accountName: 'The Church',
 	};
 
-	const onlineOptions = ['Flutterwave', 'Paystack', 'PayPal'];
+	const handlePaymentOptionClick = (option: string) => {
+		setSelectedPaymentOption(option);
+		setIsModalOpen(true);
+	};
+
+	const handleModalClose = () => {
+		setIsModalOpen(false);
+		setSelectedPaymentOption('');
+	};
 
 	return (
 		<div>
@@ -50,8 +62,8 @@ function Giving() {
 									className="mt-4 transition-opacity duration-300"
 								>
 									<p className="text-gray-600">
-										Securely give your tithe or offering as a simple gift to
-										support our ministry.
+										Securely give your tithe or offering as a gift to support
+										our ministry.
 									</p>
 								</TabsContent>
 
@@ -104,10 +116,11 @@ function Giving() {
 									className="mt-4 transition-opacity duration-300"
 								>
 									<div className="grid grid-cols-3 gap-4">
-										{onlineOptions.map((option) => (
+										{['Paystack', 'Flutterwave', 'PayPal'].map((option) => (
 											<Button
 												key={option}
 												variant="secondary"
+												onClick={() => handlePaymentOptionClick(option)}
 												colors={{
 													secondary: {
 														background: 'bg-transparent',
@@ -130,6 +143,18 @@ function Giving() {
 					</div>
 				</div>
 			</div>
+
+			<Modal
+				isOpen={isModalOpen}
+				onClose={handleModalClose}
+				title={`Give with ${selectedPaymentOption}`}
+			>
+				<PaymentForm
+					selectedPaymentOption={selectedPaymentOption}
+					onClose={handleModalClose}
+				/>
+			</Modal>
+
 			<Footer />
 		</div>
 	);

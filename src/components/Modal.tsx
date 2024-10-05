@@ -47,7 +47,7 @@ export const Modal: React.FC<ModalProps> = ({
 							leaveFrom="opacity-100 scale-100"
 							leaveTo="opacity-0 scale-95"
 						>
-							<DialogPanel className="w-full max-w-md transform overflow-hidden bg-gray-100 p-6 text-left align-middle shadow-xl transition-all">
+							<DialogPanel className="w-full max-w-[600px] transform overflow-hidden bg-gray-100 p-6 text-left align-middle shadow-xl transition-all">
 								<DialogTitle
 									as="h3"
 									className="text-lg font-medium leading-6 text-gray-900"
