@@ -47,7 +47,6 @@ function Socials() {
 						{socialLinks.map((social) => (
 							<Button
 								key={social.label}
-								href={social.url}
 								variant="secondary"
 								className="flex items-center justify-center gap-2"
 								colors={{

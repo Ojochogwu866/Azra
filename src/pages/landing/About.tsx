@@ -20,7 +20,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ icon, title, description }) => (
 
 function About() {
 	return (
-		<div className="relative z-10 flex w-full flex-col md:flex-row">
+		<div className="about relative z-10 flex w-full flex-col md:flex-row">
 			<div className="w-full bg-white md:w-1/2">
 				<div className="mx-auto max-w-7xl">
 					<div className="flex min-h-screen w-full flex-col items-start justify-center space-y-4 p-6 text-left sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ function About() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full bg-[#f9f6f0e5] md:w-1/2">
+			<div className="w-full bg-[#f9f6f0] md:w-1/2">
 				<div className="mx-auto flex min-h-screen max-w-7xl items-center">
 					<div className="flex h-full items-center justify-center p-6">
 						<div className="grid grid-cols-1 gap-10 sm:grid-cols-2">

@@ -36,6 +36,19 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.hero {
+	z-index: 1;
+}
+
+.welcome,
+.about,
+.join,
+.socials,
+footer {
+	position: relative;
+	z-index: 2;
+}
+
 html {
 	scroll-behavior: smooth;
 }

@@ -13,7 +13,7 @@ const ImageSlice: React.FC<ImageSliceProps> = ({
 	rotation,
 	index,
 }) => {
-	const sliceRef = useRef(null);
+	const sliceRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<div
@@ -39,7 +39,7 @@ const ImageSlice: React.FC<ImageSliceProps> = ({
 };
 
 const CircularImagePie: React.FC = () => {
-	const containerRef = useRef(null);
+	const containerRef = useRef<HTMLDivElement>(null); // Use specific type
 	const images = [
 		{
 			url: 'https://images.unsplash.com/photo-1665397784544-a67a3f655ebe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGhpbGxzb25nfGVufDB8fDB8fHww',
@@ -60,6 +60,8 @@ const CircularImagePie: React.FC = () => {
 
 	useEffect(() => {
 		const container = containerRef.current;
+		if (!container) return;
+
 		const slices = container.querySelectorAll('.slice');
 		let currentRotation = 0;
 
@@ -72,7 +74,7 @@ const CircularImagePie: React.FC = () => {
 				},
 			});
 
-			slices.forEach((slice, index) => {
+			slices.forEach((slice: Element, index: number) => {
 				timeline.to(
 					slice,
 					{
@@ -115,7 +117,7 @@ const CircularImagePie: React.FC = () => {
 
 function Welcome() {
 	return (
-		<div className="w-full bg-gray-100">
+		<div className="welcome w-full bg-gray-100">
 			<div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-center gap-8 p-6 md:flex-row md:gap-16 md:p-8">
 				<div className="text-center md:text-left">
 					<h2 className="text-4xl font-bold uppercase leading-tight md:text-5xl md:leading-[60px]">

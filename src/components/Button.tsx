@@ -2,12 +2,12 @@ import { gsap } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 
 interface ColorScheme {
-	background?: string;
-	text?: string;
-	border?: string;
-	hoverBackground?: string;
-	hoverText?: string;
-	hoverBorder?: string;
+	background: string;
+	text: string;
+	border: string;
+	hoverBackground: string;
+	hoverText: string;
+	hoverBorder: string;
 }
 
 interface ButtonProps {
@@ -26,6 +26,7 @@ const defaultColors = {
 		background: 'bg-white',
 		text: 'text-white',
 		hoverText: 'text-black',
+		border: 'border-transparent',
 		hoverBackground: 'bg-transparent',
 		hoverBorder: '#1a1a1a',
 	},

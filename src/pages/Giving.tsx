@@ -40,7 +40,7 @@ function Giving() {
 							<img
 								src="https://plus.unsplash.com/premium_photo-1676488643764-d6cc247a259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNodXJjaCUyMGdpdmluZ3xlbnwwfHwwfHx8MA%3D%3D"
 								alt="Giving"
-								className="h-full w-full rounded-lg object-cover"
+								className="h-full w-full object-cover"
 							/>
 						</div>
 

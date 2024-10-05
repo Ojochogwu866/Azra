@@ -2,27 +2,8 @@
 > church-web-app@0.0.0 build
 > tsc -b && vite build
 
-src/components/Button.tsx(109,31): error TS2339: Property 'border' does not exist on type '{ background: string; text: string; border?: string | undefined; hoverBackground: string; hoverText: string; hoverBorder: string; } | { background: string; text: string; hoverText: string; hoverBackground: string; hoverBorder: string; } | { ...; } | { ...; }'.
-  Property 'border' does not exist on type '{ background: string; text: string; hoverText: string; hoverBackground: string; hoverBorder: string; }'.
-src/components/Button.tsx(139,76): error TS2339: Property 'border' does not exist on type '{ background: string; text: string; border?: string | undefined; hoverBackground: string; hoverText: string; hoverBorder: string; } | { background: string; text: string; hoverText: string; hoverBackground: string; hoverBorder: string; } | { ...; } | { ...; }'.
-  Property 'border' does not exist on type '{ background: string; text: string; hoverText: string; hoverBackground: string; hoverBorder: string; }'.
-src/main.tsx(35,21): error TS2345: Argument of type 'HTMLElement | null' is not assignable to parameter of type 'Container'.
-  Type 'null' is not assignable to type 'Container'.
-src/pages/Events.tsx(57,15): error TS18047: 'scrollElement' is possibly 'null'.
-src/pages/Events.tsx(62,21): error TS18047: 'scrollElement' is possibly 'null'.
-src/pages/Events.tsx(70,18): error TS7006: Parameter 'direction' implicitly has an 'any' type.
-src/pages/Events.tsx(74,14): error TS2339: Property 'scrollBy' does not exist on type 'never'.
-src/pages/landing/Socials.tsx(48,9): error TS2322: Type '{ children: (string | Element)[]; key: string; href: string; variant: "secondary"; className: string; colors: { secondary: { background: string; text: string; border: string; hoverBackground: string; hoverText: string; hoverBorder: string; }; }; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
-  Property 'href' does not exist on type 'IntrinsicAttributes & ButtonProps'.
-src/pages/landing/Welcome.tsx(63,18): error TS18047: 'container' is possibly 'null'.
-src/pages/landing/Welcome.tsx(75,20): error TS7006: Parameter 'slice' implicitly has an 'any' type.
-src/pages/landing/Welcome.tsx(75,27): error TS7006: Parameter 'index' implicitly has an 'any' type.
-src/pages/PaymentForm.tsx(43,50): error TS2345: Argument of type '{ public_key: string; tx_ref: number; amount: number; currency: string; payment_options: string; customer: { email: string; phone_number: string; name: string; }; customizations: { title: string; description: string; logo: string; }; }' is not assignable to parameter of type 'FlutterwaveConfig'.
-  Types of property 'tx_ref' are incompatible.
-    Type 'number' is not assignable to type 'string'.
-src/pages/PaymentForm.tsx(145,6): error TS2322: Type '(_: OnApproveData, actions: OnApproveActions) => Promise<void> | undefined' is not assignable to type 'PayPalButtonOnApprove'.
-  Type 'Promise<void> | undefined' is not assignable to type 'Promise<void>'.
-    Type 'undefined' is not assignable to type 'Promise<void>'.
-Build failed on Sat 10/05/2024 12:08:16.77 
+src/pages/landing/index.tsx(24,41): error TS18047: 'hero' is possibly 'null'.
+src/pages/landing/index.tsx(41,18): error TS18047: 'hero' is possibly 'null'.
+Build failed on Sat 10/05/2024 20:15:31.04 
 v20.9.0
 10.1.0

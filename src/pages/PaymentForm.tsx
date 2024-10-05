@@ -20,11 +20,13 @@ function PaymentForm({ selectedPaymentOption, onClose }: PaymentFormProps) {
 	const [phone, setPhone] = useState('');
 	const [amount, setAmount] = useState('');
 
-	const paystackPublicKey = 'pk_test_905334c3cbabc2e35b59b8bd86100d75e5819957';
+	const paystackPublicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || '';
+	const flutterwavePublicKey =
+		import.meta.env.VITE_flutterwave_PUBLIC_KEY || '';
 
 	const config = {
-		public_key: 'FLWPUBK_TEST-ed627491d01c8e49ddbe3fb0cd02ccb2-X',
-		tx_ref: Date.now(),
+		public_key: flutterwavePublicKey,
+		tx_ref: Date.now().toString(),
 		amount: Number(amount),
 		currency: 'NGN',
 		payment_options: 'card,mobilemoney,ussd',
@@ -152,7 +154,11 @@ function PaymentForm({ selectedPaymentOption, onClose }: PaymentFormProps) {
 							});
 						}}
 						onApprove={(_, actions) => {
-							return actions.order?.capture().then(function (details) {
+							if (!actions.order) {
+								return Promise.reject(new Error('Order not found')); // Handle undefined case
+							}
+
+							return actions.order.capture().then(function (details) {
 								const payerName =
 									details?.payer?.name?.given_name ?? 'customer';
 								console.log('Transaction completed by ' + payerName);

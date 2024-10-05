@@ -64,14 +64,14 @@ const Header: React.FC = () => {
 			if (isMenuOpen) {
 				gsap.to(mobileMenuRef.current, {
 					height: 'auto',
-					opacity: 0.2,
+					opacity: 0.5,
 					duration: 0.3,
 					ease: 'power2.inOut',
 				});
 			} else {
 				gsap.to(mobileMenuRef.current, {
 					height: 0,
-					opacity: 0.2,
+					opacity: 1,
 					duration: 0.3,
 					ease: 'power2.inOut',
 				});
@@ -86,7 +86,12 @@ const Header: React.FC = () => {
 		>
 			<div className="mx-auto flex max-w-7xl items-center justify-between">
 				<div className="flex-shrink-0">
-					<img src="" alt="logo" className="h-8 w-auto" />
+					<NavLink href="/">
+						<h2 className="text-2xl font-semibold">
+							THE <span className="italic underline">Church</span>
+						</h2>
+					</NavLink>
+					{/* <img src="" alt="THE CHURCH" className="h-8 text-2xl font-semibold w-auto" /> */}
 				</div>
 
 				<nav className="hidden md:block">

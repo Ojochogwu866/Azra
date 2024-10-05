@@ -55,7 +55,7 @@ function Join() {
 	];
 
 	return (
-		<div className="h-[400px] w-full bg-black">
+		<div className="join h-[400px] w-full bg-black">
 			<div className="mx-auto flex h-full w-full max-w-7xl items-center justify-start px-4 sm:px-6 lg:px-8">
 				<div className="flex h-full flex-col justify-center space-y-8">
 					<div>

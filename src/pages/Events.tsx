@@ -47,28 +47,29 @@ const events = [
 ];
 
 function Events() {
-	const scrollRef = useRef(null);
-	const containerRef = useRef(null);
+	const scrollRef = useRef<HTMLDivElement | null>(null);
+	const containerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
 		const scrollElement = scrollRef.current;
-
-		gsap.to(scrollElement, {
-			x: () => -(scrollElement.scrollWidth - window.innerWidth),
-			ease: 'none',
-			scrollTrigger: {
-				trigger: scrollElement,
-				start: 'top top',
-				end: () => `+=${scrollElement.scrollWidth - window.innerWidth}`,
-				scrub: 1,
-				pin: true,
-				anticipatePin: 1,
-			},
-		});
+		if (scrollElement) {
+			gsap.to(scrollElement, {
+				x: () => -(scrollElement.scrollWidth - window.innerWidth),
+				ease: 'none',
+				scrollTrigger: {
+					trigger: scrollElement,
+					start: 'top top',
+					end: () => `+=${scrollElement.scrollWidth - window.innerWidth}`,
+					scrub: 1,
+					pin: true,
+					anticipatePin: 1,
+				},
+			});
+		}
 	}, []);
 
-	const scroll = (direction) => {
-		const container = containerRef.current;
+	const scroll = (direction: 'left' | 'right') => {
+		const container = containerRef.current as HTMLDivElement;
 		if (container) {
 			const scrollAmount = direction === 'left' ? -300 : 300;
 			container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -86,12 +87,12 @@ function Events() {
 					className="absolute inset-0 h-full w-full object-cover"
 				/>
 				<div className="absolute inset-0 bg-black bg-opacity-50" />
-				<div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center justify-start sm:px-6 lg:px-8">
-					<div className="w-full max-w-4xl px-4">
-						<h1 className="mb-4 text-start text-6xl font-black uppercase text-white">
+				<div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center justify-start px-4 sm:px-6 lg:px-8">
+					<div className="mt-40 w-full max-w-4xl">
+						<h1 className="mb-4 text-left text-4xl font-black uppercase text-white sm:text-5xl md:text-6xl">
 							Upcoming Events
 						</h1>
-						<p className="text-start text-base text-gray-100">
+						<p className="text-left text-base text-gray-100 sm:text-lg">
 							Join us for inspiring and uplifting gatherings that strengthen our
 							faith and community.
 						</p>
@@ -99,14 +100,15 @@ function Events() {
 				</div>
 			</div>
 
-			<div className="bg-gray-100 py-16">
+			{/* Event Section */}
+			<div className="bg-gray-100 py-10 sm:py-16">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mb-8 flex items-center justify-between">
-						<h2 className="text-3xl font-bold">Upcoming Events</h2>
+						<h2 className="text-xl font-bold sm:text-3xl">Upcoming Events</h2>
 						<div className="flex space-x-4">
 							<Button
 								onClick={() => scroll('left')}
-								className="w-[200px]"
+								className="w-[40px] sm:w-[200px]"
 								variant="secondary"
 								colors={{
 									secondary: {
@@ -123,7 +125,7 @@ function Events() {
 							</Button>
 							<Button
 								onClick={() => scroll('right')}
-								className="w-[200px]"
+								className="w-[40px] sm:w-[200px]"
 								variant="secondary"
 								colors={{
 									secondary: {
@@ -146,15 +148,18 @@ function Events() {
 					>
 						<div ref={scrollRef} className="flex">
 							{events.map((event) => (
-								<div key={event.id} className="mr-8 w-80 flex-shrink-0">
+								<div
+									key={event.id}
+									className="mr-4 w-[240px] flex-shrink-0 sm:mr-8 sm:w-80"
+								>
 									<div className="overflow-hidden bg-white shadow-sm">
 										<img
 											src={event.image}
 											alt={event.title}
-											className="h-48 w-full object-cover"
+											className="h-40 w-full object-cover sm:h-48"
 										/>
 										<div className="p-4">
-											<h3 className="mb-2 text-xl font-semibold">
+											<h3 className="mb-2 text-lg font-semibold sm:text-xl">
 												{event.title}
 											</h3>
 											<p className="text-gray-600">{event.date}</p>

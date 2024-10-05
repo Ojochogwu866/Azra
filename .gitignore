@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 
-/build-errors.txt
-/build-output.tmp
+./build-errors.txt
+./build-output.tmp
 
 # Editor directories and files
 .vscode/*
