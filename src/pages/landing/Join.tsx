@@ -64,7 +64,7 @@ function Join() {
 							<br /> belong in church
 						</h2>
 					</div>
-					<div className="flex gap-4">
+					<div className="flex flex-col md:flex-row gap-4">
 						<Button
 							className="w-[200px]"
 							variant="secondary"

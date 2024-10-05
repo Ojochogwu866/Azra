@@ -33,7 +33,7 @@ function Hero() {
 						The Light Fellowship <br /> Salt & Light
 					</h1>
 					<Button
-						className="w-full sm:w-[200px]"
+						className="max-w-[200px]"
 						variant="secondary"
 						colors={{
 							secondary: {
