@@ -108,7 +108,7 @@ function Events() {
 						<div className="flex space-x-4">
 							<Button
 								onClick={() => scroll('left')}
-								className="w-[40px] sm:w-[200px]"
+								className="w-[70px] sm:w-[200px] h-10 sm:h-auto flex justify-center items-center"
 								variant="secondary"
 								colors={{
 									secondary: {
@@ -125,7 +125,7 @@ function Events() {
 							</Button>
 							<Button
 								onClick={() => scroll('right')}
-								className="w-[40px] sm:w-[200px]"
+								className="w-[70px] sm:w-[200px] h-10 sm:h-auto flex justify-center items-center"
 								variant="secondary"
 								colors={{
 									secondary: {
