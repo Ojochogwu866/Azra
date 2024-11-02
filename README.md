@@ -56,26 +56,7 @@ This project is a modern, responsive church website built with React. It feature
    npm start
    ```
 
-## Configuration
-
-### CMS Setup
-[Instructions for setting up and connecting to your chosen headless CMS]
-
-### Payment Gateway Integration
-1. Paystack: [Brief instructions or link to Paystack integration docs]
-2. Flutterwave: [Brief instructions or link to Flutterwave integration docs]
-3. PayPal: [Brief instructions or link to PayPal integration docs]
-
-## Deployment
-
-[Instructions for deploying the website, e.g., using Netlify, Vercel, or your preferred hosting solution]
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries about this project, please contact:
-
-Email: dicksonojochogwu@gmail.com
