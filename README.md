@@ -39,7 +39,7 @@ This project is a modern, responsive church website built with React. It feature
 
 1. Clone the repository:
    ```
-   git clone [repository-url]
+   git clone [https://github.com/Ojochogwu866/Azra/]
    ```
 
 2. Install dependencies:
